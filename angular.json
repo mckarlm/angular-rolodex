@@ -58,7 +58,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-rolodex:build:production"
+              "browserTarget": "ng-rolodex:build:production",
+              "proxyConfig": "proxy.conf.json"
             }
           }
         },
