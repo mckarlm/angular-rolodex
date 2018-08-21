@@ -5,6 +5,6 @@ const users = require('./users');
 const contacts = require('./contacts');
 
 router.use('/users', users);
-router.use('/contacts');
+router.use('/contacts', contacts);
 
 module.exports = router;
