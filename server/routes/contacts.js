@@ -6,7 +6,7 @@ const db = require('../db/knex');
 router.route('/')
   .get((req, res) => {
     return Contact
-      .fetchAll({ withRelated: ['user'] })
+      .fetchAll()
       .then(contacts => {
         return res.json(contacts);
       })

@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../db/models/User');
 const db = require('../db/knex');
 
-router.route('/')
+router.route('/users')
   .get((req, res) => {
     return User
       .fetchAll({ withRelated: ['contact'] })
@@ -15,6 +15,22 @@ router.route('/')
         res.status(500).json({ message: 'Something in the server broke!' });
       });
   })
+
+router.route('/:id/profile')
+.get((req, res) => {
+  const userId = req.params.id
+  return new User ({id: userId})
+    .fetch()
+    .then(user=> {
+      return res.json(user)
+    })
+    .catch(err=>{
+      console.log(err);
+      res.status(500).json({ message: 'Could not find user'})
+    })
+})
+
+router.route('/register')
   .post((req, res) => {
     const userInfo = {
       username: req.body.username,

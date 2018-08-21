@@ -6,7 +6,7 @@ class User extends bookshelf.Model {
 
   contact() {
     return this.hasMany('Contact', 'id', 'created_by');
-  }
+  } 
 }
 
 module.exports = bookshelf.model('User', User);
