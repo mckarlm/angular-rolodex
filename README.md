@@ -2,7 +2,7 @@
 
 Angular 2+ Exercise
 
-![homepage](.github/home.png?raw=true)
+![homepage](https://raw.githubusercontent.com/devleague/ng-rolodex/master/.github/home.png)
 
 ## Setup the Server
 
