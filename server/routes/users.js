@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../db/models/User');
 const db = require('../db/knex');
 
-router.route('/:id/profile')
+router.route('/profile/:id')
   .get((req, res) => {
     const userId = req.params.id;
     return new User({ id: userId })
