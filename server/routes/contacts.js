@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Contact = require('../db/models/Contact');
 const db = require('../db/knex');
-const test = require('../routes/users')
+// const test = require('../routes/users')
 
 
 // FIX, SHOULD RETURN ALL CONTACTS OF LOGGED IN USER

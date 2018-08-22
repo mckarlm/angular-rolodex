@@ -1,0 +1,35 @@
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #99cc99
+}
+
+.headerOptions {
+  display: flex;
+  align-items: center
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+li {
+  padding: 20px;
+  // color: #ffffcc;
+
+  a {
+    text-decoration: none;
+    &:hover {color: darken($color: #99cc99, $amount: 10%)};
+    cursor: pointer
+  }
+}
+
+.headerTitle {
+  padding: 0 0 0 20px;
+}
