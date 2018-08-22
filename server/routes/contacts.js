@@ -2,11 +2,16 @@ const express = require('express');
 const router = express.Router();
 const Contact = require('../db/models/Contact');
 const db = require('../db/knex');
+const test = require('../routes/users')
 
-router.route('/')
+
+// FIX, SHOULD RETURN ALL CONTACTS OF LOGGED IN USER
+router.route('/contacts')
   .get((req, res) => {
     return Contact
-      .fetchAll()
+      // probably works, but not really?
+      // currently returns all contacts, regardless of user
+      .fetchAll({ withRelated: ['user'] })
       .then(contacts => {
         return res.json(contacts);
       })
@@ -15,7 +20,6 @@ router.route('/')
         res.status(500).json({ message: 'Something in the server broke!' })
       });
   })
-
   .post((req, res) => {
     const contactInfo = {
       name: req.body.name,
